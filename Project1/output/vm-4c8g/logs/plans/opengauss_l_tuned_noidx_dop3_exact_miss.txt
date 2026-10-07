@@ -1,0 +1,8 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'Zqxjv Nonexistent Title'
+
+Streaming(type: LOCAL GATHER dop: 1/3)  (cost=0.00..114889.51 rows=139 width=25) (actual time=[181.117,181.117]..[181.117,181.117], rows=0)
+  ->  Seq Scan on titles  (cost=0.00..114888.77 rows=139 width=25) (actual time=[177.898,177.898]..[178.527,178.527], rows=0)
+        Filter: (primary_title = 'Zqxjv Nonexistent Title'::text)
+        Rows Removed by Filter: 12842753
+        Buffers: shared max hit=48037 min hit=47979 max read=11417 min read=11269
+Total runtime: 181.343 ms

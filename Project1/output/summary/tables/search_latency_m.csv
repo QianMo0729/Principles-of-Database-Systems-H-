@@ -1,0 +1,12 @@
+operation,rows returned,File: sequential scan,File: in-memory index,PostgreSQL: no index,PostgreSQL: B-tree,PostgreSQL: trigram GIN,PostgreSQL: full-text GIN,openGauss: no index,openGauss: B-tree,openGauss: full-text GIN
+point,5.0,61.0952,2.18582e-05,0.1248,0.121,0.111,,0.1756,0.1726,
+exact_common,6000.0,130.8523,0.128312,15.8847,2.6646,50.7785,,58.7831,4.0555,
+exact_rare,9.0,129.8588,0.000211292,14.6977,0.1303,1.7388,,57.541,0.1992,
+exact_miss,0.0,128.5828,4.4916e-05,14.2337,0.1128,0.3111,,56.2878,0.1993,
+prefix,303.0,132.1805,0.00578921,15.1316,0.2687,2.3143,,62.1207,0.4075,
+contains_common,7044.0,155.7874,14.1146,24.4771,25.3241,4.1468,,84.5943,84.8632,
+contains_rare,55.0,154.3695,11.9885,23.9014,24.5524,0.4906,,81.8042,83.2578,
+contains_miss,0.0,153.3382,12.9428,22.6333,25.3395,0.1139,,81.0516,81.1658,
+word_common,5946.0,,,,,,2.9583,,,4.2797
+word_rare,51.0,,,,,,0.19,,,0.332
+word_miss,0.0,,,,,,0.1378,,,0.2946

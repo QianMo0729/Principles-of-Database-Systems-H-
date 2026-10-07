@@ -1,0 +1,316 @@
+[21:13:16] host load before file part: 3.42
+[21:13:16] file retrieval, scale s
+file scan point            median=    6.313 ms rows=5
+file scan exact_common     median=   12.244 ms rows=578
+file scan exact_rare       median=   11.693 ms rows=0
+file scan exact_miss       median=   11.607 ms rows=0
+file scan prefix           median=   11.819 ms rows=33
+file scan contains_common  median=   14.218 ms rows=682
+file scan contains_rare    median=   14.090 ms rows=4
+file scan contains_miss    median=   14.186 ms rows=0
+memindex build: load=51 ms sort=47 ms heap=7 MB rows=127865
+file memindex point            median=   0.00004 ms rows=5
+file memindex exact_common     median=   0.01052 ms rows=578
+file memindex exact_rare       median=   0.00005 ms rows=0
+file memindex exact_miss       median=   0.00005 ms rows=0
+file memindex prefix           median=   0.00061 ms rows=33
+file memindex contains_common  median=   1.41299 ms rows=682
+file memindex contains_rare    median=   1.16987 ms rows=4
+file memindex contains_miss    median=   1.29498 ms rows=0
+[21:13:22] file update, scale s
+file update broad  safe     median=     30.0 ms changed=13090 rows=156787
+file update broad  nofsync  median=     26.1 ms changed=13090 rows=156787
+file update narrow safe     median=     27.9 ms changed=10 rows=156787
+file update narrow nofsync  median=     27.3 ms changed=10 rows=156787
+[21:13:23] file retrieval, scale m
+file scan point            median=   61.095 ms rows=5
+file scan exact_common     median=  130.852 ms rows=6000
+file scan exact_rare       median=  129.859 ms rows=9
+file scan exact_miss       median=  128.583 ms rows=0
+file scan prefix           median=  132.181 ms rows=303
+file scan contains_common  median=  155.787 ms rows=7044
+file scan contains_rare    median=  154.370 ms rows=55
+file scan contains_miss    median=  153.338 ms rows=0
+memindex build: load=221 ms sort=317 ms heap=56 MB rows=1285110
+file memindex point            median=   0.00002 ms rows=5
+file memindex exact_common     median=   0.13461 ms rows=6000
+file memindex exact_rare       median=   0.00021 ms rows=9
+file memindex exact_miss       median=   0.00007 ms rows=0
+file memindex prefix           median=   0.00573 ms rows=303
+file memindex contains_common  median=  15.60775 ms rows=7044
+file memindex contains_rare    median=  13.51933 ms rows=55
+file memindex contains_miss    median=  13.49600 ms rows=0
+[21:13:38] file update, scale m
+file update broad  safe     median=    243.1 ms changed=130384 rows=1573840
+file update broad  nofsync  median=    225.3 ms changed=130384 rows=1573840
+file update narrow safe     median=    239.9 ms changed=10 rows=1573840
+file update narrow nofsync  median=    221.4 ms changed=10 rows=1573840
+[21:13:45] file retrieval, scale l
+file scan point            median=  572.056 ms rows=5
+file scan exact_common     median= 1263.910 ms rows=60684
+file scan exact_rare       median= 1233.418 ms rows=47
+file scan exact_miss       median= 1233.956 ms rows=0
+file scan prefix           median= 1258.515 ms rows=3266
+file scan contains_common  median= 1501.810 ms rows=70524
+file scan contains_rare    median= 1493.450 ms rows=474
+file scan contains_miss    median= 1453.847 ms rows=0
+memindex build: load=1675 ms sort=5646 ms heap=510 MB rows=12842753
+file memindex point            median=   0.00004 ms rows=5
+file memindex exact_common     median=   3.04806 ms rows=60684
+file memindex exact_rare       median=   0.00100 ms rows=47
+file memindex exact_miss       median=   0.00011 ms rows=0
+file memindex prefix           median=   0.10405 ms rows=3266
+file memindex contains_common  median= 149.77183 ms rows=70524
+file memindex contains_rare    median= 123.53196 ms rows=474
+file memindex contains_miss    median= 136.11775 ms rows=0
+[21:15:26] file update, scale l
+file update broad  safe     median=   2538.5 ms changed=1305670 rows=15712491
+file update broad  nofsync  median=   2219.6 ms changed=1305670 rows=15712491
+file update narrow safe     median=   2387.7 ms changed=10 rows=15712491
+file update narrow nofsync  median=   2196.0 ms changed=10 rows=15712491
+[21:16:28] file concurrency: lost updates
+file counter nolock     expected=16000 actual=2674 lost=13326 (269798 ops/s)
+file counter nolock     expected=16000 actual=3401 lost=12599 (805025 ops/s)
+file counter nolock     expected=16000 actual=6566 lost=9434 (978808 ops/s)
+file counter lock       expected=16000 actual=16000 lost=0 (408534 ops/s)
+file counter lock       expected=16000 actual=16000 lost=0 (602560 ops/s)
+file counter lock       expected=16000 actual=16000 lost=0 (721606 ops/s)
+file counter lock_fsync expected=16000 actual=16000 lost=0 (14279 ops/s)
+file counter lock_fsync expected=16000 actual=16000 lost=0 (14808 ops/s)
+file counter lock_fsync expected=16000 actual=16000 lost=0 (14741 ops/s)
+[21:16:32] file crash in the middle of a bulk update
+file crash inplace  rows 1573840 -> 779602 (lost 794238), rows with Ttt 1 -> 63573, broken last line=1
+file crash safe     rows 1573840 -> 1573840 (lost 0), rows with Ttt 1 -> 1, broken last line=0
+[21:16:34] starting pg (tuned); host load 3.50
+postgres READY after 131 ms 
+[21:16:35] pg load, scale s
+postgres bench_s titles   rows=127865 copy=51 ms pk=15 ms analyze=36 ms
+postgres bench_s people   rows=156787 copy=39 ms pk=15 ms analyze=24 ms
+postgres bench_s ratings  rows=17065 copy=4 ms pk=2 ms analyze=6 ms
+[21:16:35] pg retrieval, scale s
+postgres noidx point            median=    0.101 ms server=    0.011 ms rows=5 [Index Scan]
+postgres noidx exact_common     median=    2.928 ms server=    2.576 ms rows=578 [Seq Scan]
+postgres noidx exact_rare       median=    2.897 ms server=    2.640 ms rows=0 [Seq Scan]
+postgres noidx exact_miss       median=    2.623 ms server=    2.409 ms rows=0 [Seq Scan]
+postgres noidx prefix           median=    2.973 ms server=    2.821 ms rows=33 [Seq Scan]
+postgres noidx contains_common  median=    5.775 ms server=    5.206 ms rows=682 [Seq Scan]
+postgres noidx contains_rare    median=    5.159 ms server=    5.439 ms rows=4 [Seq Scan]
+postgres noidx contains_miss    median=    5.224 ms server=    5.297 ms rows=0 [Seq Scan]
+postgres index btree built in 31 ms
+postgres btree point            median=    0.126 ms server=    0.005 ms rows=5 [Index Scan]
+postgres btree exact_common     median=    0.416 ms server=    0.159 ms rows=578 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_rare       median=    0.139 ms server=    0.005 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_miss       median=    0.137 ms server=    0.004 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree prefix           median=    0.177 ms server=    0.013 ms rows=33 [Index Scan]
+postgres btree contains_common  median=    5.517 ms server=    5.221 ms rows=682 [Seq Scan]
+postgres btree contains_rare    median=    5.191 ms server=    4.970 ms rows=4 [Seq Scan]
+postgres btree contains_miss    median=    5.090 ms server=    4.814 ms rows=0 [Seq Scan]
+postgres index trgm  built in 174 ms
+postgres trgm  point            median=    0.087 ms server=    0.005 ms rows=5 [Index Scan]
+postgres trgm  exact_common     median=    5.288 ms server=    4.949 ms rows=578 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  exact_rare       median=    0.267 ms server=    0.155 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  exact_miss       median=    0.187 ms server=    0.090 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  prefix           median=    0.345 ms server=    0.195 ms rows=33 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_common  median=    0.519 ms server=    0.208 ms rows=682 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_rare    median=    0.180 ms server=    0.035 ms rows=4 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_miss    median=    0.126 ms server=    0.005 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres index fts   built in 142 ms
+postgres fts   word_common      median=    0.514 ms server=    0.150 ms rows=579 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres fts   word_rare        median=    0.128 ms server=    0.007 ms rows=4 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres fts   word_miss        median=    0.145 ms server=    0.004 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+[21:16:39] pg update, scale s
+postgres update broad  heap   median=     27.6 ms changed=13090
+postgres update narrow heap   median=      0.5 ms changed=10
+[21:16:40] pg load, scale m
+postgres bench_m titles   rows=1285110 copy=487 ms pk=117 ms analyze=86 ms
+postgres bench_m people   rows=1573840 copy=431 ms pk=139 ms analyze=74 ms
+postgres bench_m ratings  rows=171407 copy=24 ms pk=16 ms analyze=17 ms
+[21:16:42] pg retrieval, scale m
+postgres noidx point            median=    0.125 ms server=    0.005 ms rows=5 [Index Scan]
+postgres noidx exact_common     median=   15.885 ms server=   14.474 ms rows=6000 [Parallel Seq Scan]
+postgres noidx exact_rare       median=   14.698 ms server=   15.430 ms rows=9 [Parallel Seq Scan]
+postgres noidx exact_miss       median=   14.234 ms server=   13.710 ms rows=0 [Parallel Seq Scan]
+postgres noidx prefix           median=   15.132 ms server=   14.999 ms rows=303 [Parallel Seq Scan]
+postgres noidx contains_common  median=   24.477 ms server=   23.834 ms rows=7044 [Parallel Seq Scan]
+postgres noidx contains_rare    median=   23.901 ms server=   23.001 ms rows=55 [Parallel Seq Scan]
+postgres noidx contains_miss    median=   22.633 ms server=   21.867 ms rows=0 [Parallel Seq Scan]
+postgres index btree built in 220 ms
+postgres btree point            median=    0.121 ms server=    0.004 ms rows=5 [Index Scan]
+postgres btree exact_common     median=    2.665 ms server=    1.677 ms rows=6000 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_rare       median=    0.130 ms server=    0.008 ms rows=9 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_miss       median=    0.113 ms server=    0.005 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree prefix           median=    0.269 ms server=    0.072 ms rows=303 [Index Scan]
+postgres btree contains_common  median=   25.324 ms server=   24.729 ms rows=7044 [Parallel Seq Scan]
+postgres btree contains_rare    median=   24.552 ms server=   24.074 ms rows=55 [Parallel Seq Scan]
+postgres btree contains_miss    median=   25.340 ms server=   23.917 ms rows=0 [Parallel Seq Scan]
+postgres index trgm  built in 1320 ms
+postgres trgm  point            median=    0.111 ms server=    0.011 ms rows=5 [Index Scan]
+postgres trgm  exact_common     median=   50.779 ms server=   49.059 ms rows=6000 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  exact_rare       median=    1.739 ms server=    1.607 ms rows=9 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  exact_miss       median=    0.311 ms server=    0.163 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  prefix           median=    2.314 ms server=    2.110 ms rows=303 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_common  median=    4.147 ms server=    3.703 ms rows=7044 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_rare    median=    0.491 ms server=    0.360 ms rows=55 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_miss    median=    0.114 ms server=    0.005 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres index fts   built in 1080 ms
+postgres fts   word_common      median=    2.958 ms server=    1.824 ms rows=5946 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres fts   word_rare        median=    0.190 ms server=    0.025 ms rows=51 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres fts   word_miss        median=    0.138 ms server=    0.005 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+[21:16:50] pg update, scale m
+postgres update broad  heap   median=    271.8 ms changed=130384
+postgres update narrow heap   median=      0.5 ms changed=10
+[21:16:58] pg load, scale l
+postgres bench_l titles   rows=12842753 copy=5319 ms pk=2369 ms analyze=1198 ms
+postgres bench_l people   rows=15712491 copy=4301 ms pk=2283 ms analyze=1105 ms
+postgres bench_l ratings  rows=1718051 copy=265 ms pk=169 ms analyze=57 ms
+[21:17:16] pg retrieval, scale l
+postgres noidx point            median=    0.122 ms server=    0.007 ms rows=5 [Index Scan]
+postgres noidx exact_common     median=  147.360 ms server=  149.224 ms rows=60684 [Parallel Seq Scan]
+postgres noidx exact_rare       median=  142.151 ms server=  142.830 ms rows=47 [Parallel Seq Scan]
+postgres noidx exact_miss       median=  139.753 ms server=  138.625 ms rows=0 [Parallel Seq Scan]
+postgres noidx prefix           median=  146.945 ms server=  149.593 ms rows=3266 [Parallel Seq Scan]
+postgres noidx contains_common  median=  220.078 ms server=  217.283 ms rows=70524 [Parallel Seq Scan]
+postgres noidx contains_rare    median=  214.440 ms server=  215.202 ms rows=474 [Parallel Seq Scan]
+postgres noidx contains_miss    median=  213.407 ms server=  221.075 ms rows=0 [Parallel Seq Scan]
+postgres index btree built in 2586 ms
+postgres btree point            median=    0.121 ms server=    0.008 ms rows=5 [Index Scan]
+postgres btree exact_common     median=   39.080 ms server=   32.223 ms rows=60684 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_rare       median=    0.130 ms server=    0.019 ms rows=47 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_miss       median=    0.110 ms server=    0.006 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree prefix           median=    1.359 ms server=    0.847 ms rows=3266 [Index Scan]
+postgres btree contains_common  median=  228.112 ms server=  226.298 ms rows=70524 [Parallel Seq Scan]
+postgres btree contains_rare    median=  219.063 ms server=  217.832 ms rows=474 [Parallel Seq Scan]
+postgres btree contains_miss    median=  221.145 ms server=  224.492 ms rows=0 [Parallel Seq Scan]
+postgres index trgm  built in 12174 ms
+postgres trgm  point            median=    0.088 ms server=    0.008 ms rows=5 [Index Scan]
+postgres trgm  exact_common     median=  531.236 ms server=  522.139 ms rows=60684 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  exact_rare       median=   15.860 ms server=   15.873 ms rows=47 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  exact_miss       median=    0.338 ms server=    0.234 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  prefix           median=   23.115 ms server=   21.614 ms rows=3266 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_common  median=   53.512 ms server=   45.091 ms rows=70524 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_rare    median=    3.886 ms server=    3.776 ms rows=474 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres trgm  contains_miss    median=    0.121 ms server=    0.006 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres index fts   built in 10312 ms
+postgres fts   word_common      median=   41.901 ms server=   37.403 ms rows=59547 [Parallel Bitmap Heap Scan + Bitmap Index Scan]
+postgres fts   word_rare        median=    0.367 ms server=    0.136 ms rows=429 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres fts   word_miss        median=    0.113 ms server=    0.004 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+[21:18:06] pg update, scale l
+postgres update broad  heap   median=   3194.1 ms changed=1305670
+postgres update narrow heap   median=      0.7 ms changed=10
+[21:19:12] starting og (tuned); host load 3.83
+opengauss READY after 176 ms 
+[21:19:13] og load, scale s
+opengauss bench_s titles   rows=127865 copy=253 ms pk=36 ms analyze=62 ms
+opengauss bench_s people   rows=156787 copy=215 ms pk=38 ms analyze=34 ms
+opengauss bench_s ratings  rows=17065 copy=8 ms pk=4 ms analyze=7 ms
+[21:19:15] og retrieval, scale s
+opengauss noidx point            median=    0.162 ms server=    0.015 ms rows=5 [Index Scan]
+opengauss noidx exact_common     median=    6.045 ms server=    5.673 ms rows=578 [Seq Scan]
+opengauss noidx exact_rare       median=    5.642 ms server=    5.459 ms rows=0 [Seq Scan]
+opengauss noidx exact_miss       median=    5.460 ms server=    5.194 ms rows=0 [Seq Scan]
+opengauss noidx prefix           median=    6.137 ms server=    5.905 ms rows=33 [Seq Scan]
+opengauss noidx contains_common  median=    8.607 ms server=    8.078 ms rows=682 [Seq Scan]
+opengauss noidx contains_rare    median=    8.260 ms server=    7.977 ms rows=4 [Seq Scan]
+opengauss noidx contains_miss    median=    8.212 ms server=    7.801 ms rows=0 [Seq Scan]
+opengauss index btree built in 57 ms
+opengauss btree point            median=    0.159 ms server=    0.015 ms rows=5 [Index Scan]
+opengauss btree exact_common     median=    0.657 ms server=    0.229 ms rows=578 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree exact_rare       median=    0.186 ms server=    0.010 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree exact_miss       median=    0.236 ms server=    0.010 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree prefix           median=    0.270 ms server=    0.021 ms rows=33 [Index Scan]
+opengauss btree contains_common  median=    9.067 ms server=    9.082 ms rows=682 [Seq Scan]
+opengauss btree contains_rare    median=    8.262 ms server=    7.903 ms rows=4 [Seq Scan]
+opengauss btree contains_miss    median=    8.273 ms server=    7.997 ms rows=0 [Seq Scan]
+opengauss index trgm UNSUPPORTED: 58P01: [*.*.0.3:35092/*.*.0.2:5432] ERROR: could not open extension control file: No such file or directory
+opengauss index fts   built in 295 ms
+opengauss fts   word_common      median=    0.883 ms server=    0.270 ms rows=579 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss fts   word_rare        median=    0.315 ms server=    0.017 ms rows=4 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss fts   word_miss        median=    0.289 ms server=    0.010 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+[21:19:19] og update, scale s
+opengauss update broad  heap   median=     48.1 ms changed=13090
+opengauss update broad  ustore median=     94.6 ms changed=13090
+opengauss update narrow heap   median=      2.3 ms changed=10
+opengauss update narrow ustore median=      1.9 ms changed=10
+[21:19:31] og load, scale m
+opengauss bench_m titles   rows=1285110 copy=2480 ms pk=323 ms analyze=108 ms
+opengauss bench_m people   rows=1573840 copy=2201 ms pk=372 ms analyze=99 ms
+opengauss bench_m ratings  rows=171407 copy=63 ms pk=35 ms analyze=22 ms
+[21:19:38] og retrieval, scale m
+opengauss noidx point            median=    0.176 ms server=    0.013 ms rows=5 [Index Scan]
+opengauss noidx exact_common     median=   58.783 ms server=   57.370 ms rows=6000 [Seq Scan]
+opengauss noidx exact_rare       median=   57.541 ms server=   59.334 ms rows=9 [Seq Scan]
+opengauss noidx exact_miss       median=   56.288 ms server=   55.957 ms rows=0 [Seq Scan]
+opengauss noidx prefix           median=   62.121 ms server=   61.666 ms rows=303 [Seq Scan]
+opengauss noidx contains_common  median=   84.594 ms server=   82.441 ms rows=7044 [Seq Scan]
+opengauss noidx contains_rare    median=   81.804 ms server=   82.562 ms rows=55 [Seq Scan]
+opengauss noidx contains_miss    median=   81.052 ms server=   80.783 ms rows=0 [Seq Scan]
+opengauss index btree built in 736 ms
+opengauss btree point            median=    0.173 ms server=    0.016 ms rows=5 [Index Scan]
+opengauss btree exact_common     median=    4.056 ms server=    2.538 ms rows=6000 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree exact_rare       median=    0.199 ms server=    0.015 ms rows=9 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree exact_miss       median=    0.199 ms server=    0.011 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree prefix           median=    0.408 ms server=    0.128 ms rows=303 [Index Scan]
+opengauss btree contains_common  median=   84.863 ms server=   83.551 ms rows=7044 [Seq Scan]
+opengauss btree contains_rare    median=   83.258 ms server=   82.090 ms rows=55 [Seq Scan]
+opengauss btree contains_miss    median=   81.166 ms server=   80.616 ms rows=0 [Seq Scan]
+opengauss index trgm UNSUPPORTED: 58P01: [*.*.0.3:52962/*.*.0.2:5432] ERROR: could not open extension control file: No such file or directory
+opengauss index fts   built in 2990 ms
+opengauss fts   word_common      median=    4.280 ms server=    2.846 ms rows=5946 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss fts   word_rare        median=    0.332 ms server=    0.039 ms rows=51 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss fts   word_miss        median=    0.295 ms server=    0.012 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+[21:19:50] og update, scale m
+opengauss update broad  heap   median=    355.3 ms changed=130384
+opengauss update broad  ustore median=    774.8 ms changed=130384
+opengauss update narrow heap   median=      1.3 ms changed=10
+opengauss update narrow ustore median=      1.5 ms changed=10
+[21:20:38] og load, scale l
+opengauss bench_l titles   rows=12842753 copy=25298 ms pk=3850 ms analyze=591 ms
+opengauss bench_l people   rows=15712491 copy=21860 ms pk=6003 ms analyze=644 ms
+opengauss bench_l ratings  rows=1718051 copy=597 ms pk=355 ms analyze=88 ms
+[21:21:41] og retrieval, scale l
+opengauss noidx point            median=    0.176 ms server=    0.014 ms rows=5 [Index Scan]
+opengauss noidx exact_common     median=  666.308 ms server=  662.604 ms rows=60684 [Seq Scan]
+opengauss noidx exact_rare       median=  635.416 ms server=  629.481 ms rows=47 [Seq Scan]
+opengauss noidx exact_miss       median=  597.069 ms server=  598.702 ms rows=0 [Seq Scan]
+opengauss noidx prefix           median=  630.641 ms server=  625.308 ms rows=3266 [Seq Scan]
+opengauss noidx contains_common  median=  844.192 ms server=  834.495 ms rows=70524 [Seq Scan]
+opengauss noidx contains_rare    median=  824.755 ms server=  826.706 ms rows=474 [Seq Scan]
+opengauss noidx contains_miss    median=  815.829 ms server=  818.818 ms rows=0 [Seq Scan]
+opengauss index btree built in 12175 ms
+opengauss btree point            median=    0.176 ms server=    0.013 ms rows=5 [Index Scan]
+opengauss btree exact_common     median=   47.799 ms server=   39.988 ms rows=60684 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree exact_rare       median=    0.197 ms server=    0.039 ms rows=47 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree exact_miss       median=    0.183 ms server=    0.010 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree prefix           median=    1.915 ms server=    1.206 ms rows=3266 [Index Scan]
+opengauss btree contains_common  median=  838.074 ms server=  825.265 ms rows=70524 [Seq Scan]
+opengauss btree contains_rare    median=  802.321 ms server=  796.188 ms rows=474 [Seq Scan]
+opengauss btree contains_miss    median=  783.324 ms server=  780.254 ms rows=0 [Seq Scan]
+opengauss index trgm UNSUPPORTED: 58P01: [*.*.0.3:48794/*.*.0.2:5432] ERROR: could not open extension control file: No such file or directory
+opengauss index fts   built in 30834 ms
+opengauss fts   word_common      median=   50.374 ms server=   39.822 ms rows=59547 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss fts   word_rare        median=    0.612 ms server=    0.205 ms rows=429 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss fts   word_miss        median=    0.255 ms server=    0.009 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+[21:23:29] og update, scale l
+opengauss update broad  heap   median=   4035.9 ms changed=1305670
+opengauss update broad  ustore median=   7802.3 ms changed=1305670
+opengauss update narrow heap   median=      3.5 ms changed=10
+opengauss update narrow ustore median=      3.3 ms changed=10
+[21:28:38] starting pg (default config); host load 2.61
+postgres READY after 149 ms 
+postgres noidx point            median=    0.126 ms server=    0.006 ms rows=5 [Index Scan]
+postgres noidx exact_common     median=  175.402 ms server=  159.698 ms rows=60684 [Parallel Seq Scan]
+postgres noidx exact_rare       median=  160.896 ms server=  163.735 ms rows=47 [Parallel Seq Scan]
+postgres noidx exact_miss       median=  159.618 ms server=  164.648 ms rows=0 [Parallel Seq Scan]
+postgres noidx prefix           median=  172.958 ms server=  164.660 ms rows=3266 [Parallel Seq Scan]
+postgres noidx contains_common  median=  229.533 ms server=  227.787 ms rows=70524 [Parallel Seq Scan]
+postgres noidx contains_rare    median=  226.153 ms server=  229.073 ms rows=474 [Parallel Seq Scan]
+postgres noidx contains_miss    median=  220.252 ms server=  224.525 ms rows=0 [Parallel Seq Scan]
+postgres index btree built in 2945 ms
+postgres btree point            median=    0.142 ms server=    0.005 ms rows=5 [Index Scan]
+postgres btree exact_common     median=   52.237 ms server=   46.733 ms rows=60684 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_rare       median=    0.134 ms server=    0.018 ms rows=47 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree exact_miss       median=    0.123 ms server=    0.005 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree prefix           median=    1.116 ms server=    0.664 ms rows=3266 [Index Scan]
+postgres btree contains_common  median=  249.538 ms server=  223.432 ms rows=70524 [Parallel Seq Scan]
+postgres btree contains_rare    median=  227.637 ms server=  220.148 ms rows=474 [Parallel Seq Scan]
+postgres btree contains_miss    median=  218.746 ms server=  223.256 ms rows=0 [Parallel Seq Scan]

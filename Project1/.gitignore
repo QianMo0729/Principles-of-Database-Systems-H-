@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# compiled classes (rebuilt by Codes/scripts/01_build.sh)
+Codes/java/build/
+
+# LaTeX build files
+Report/.latex-cache/
+
+# trial runs
+output/_smoke/
+output/_trial/
+
+# the course handout
+project1.pdf

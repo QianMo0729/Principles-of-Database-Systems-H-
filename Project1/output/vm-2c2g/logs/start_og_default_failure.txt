@@ -1,0 +1,12 @@
+2026-10-07 07:01:16.949 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] WARNING:  could not create any HA TCP/IP sockets
+2026-10-07 07:01:16.949 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] WARNING:  could not create any HA TCP/IP sockets
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] LOG:  InitNuma numaNodeNum: 1 numa_distribute_mode: none inheritThreadPool: 0.
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] LOG:  reserved memory for backend threads is: 220 MB
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] LOG:  reserved memory for WAL buffers is: 128 MB
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] LOG:  Set max backend reserve memory is: 348 MB, max dynamic memory is: 8084 MB
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] LOG:  shared memory 3343 Mbytes, memory context 8432 Mbytes, max process memory 12288 Mbytes
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] FATAL:  could not create shared memory segment: Cannot allocate memory
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] DETAIL:  Failed system call was shmget(key=5432001, size=3505834312, 03600).
+2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] HINT:  This error usually means that openGauss's request for a shared memory segment exceeded available memory or swap space, or exceeded your kernel's SHMALL parameter.  You can either reduce the request size or reconfigure the kernel with larger SHMALL.  To reduce the request size (currently 3505834312 bytes), reduce openGauss's shared memory usage, perhaps by reducing shared_buffers.
+	The openGauss documentation contains more information about shared memory configuration.
+2026-10-07 07:01:16.955 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] LOG:  FiniNuma allocIndex: 0.

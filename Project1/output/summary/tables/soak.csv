@@ -1,0 +1,13 @@
+metric,PostgreSQL,openGauss
+throughput_ops,44345.1,27431.2
+p50_ms,0.242,0.365
+p95_ms,0.921,1.602
+p99_ms,1.234,3.28
+max_ms,29.701,1571.66
+errors,0.0,0.0
+error_rate_pct,0.0,0.0
+connect_failures,0.0,0.0
+server_cpu_cores,1.654,1.401
+server_mem_peak_mb,1220.9,1654.6
+server_mem_end_mb,1137.4,1377.4
+vm_oom_kills,0.0,0.0

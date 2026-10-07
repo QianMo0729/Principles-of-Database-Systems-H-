@@ -1,0 +1,61 @@
+[22:55:55] round 0: pg (host load 1.31)
+postgres READY after 100 ms 
+postgres read  clients=1       15307 ops/s p50=0.064 p95=0.074 p99=0.080 ms errors=0 {}
+postgres read  clients=4       51008 ops/s p50=0.077 p95=0.094 p99=0.110 ms errors=0 {}
+postgres read  clients=16      98960 ops/s p50=0.136 p95=0.351 p99=0.582 ms errors=0 {}
+postgres read  clients=64     120372 ops/s p50=0.435 p95=0.898 p99=3.177 ms errors=0 {}
+postgres mixed clients=1       15469 ops/s p50=0.050 p95=0.129 p99=0.139 ms errors=0 {}
+postgres mixed clients=4       42385 ops/s p50=0.067 p95=0.230 p99=0.277 ms errors=0 {}
+postgres mixed clients=16      78813 ops/s p50=0.119 p95=0.560 p99=0.844 ms errors=0 {}
+postgres mixed clients=64      94538 ops/s p50=0.335 p95=2.256 p99=3.593 ms errors=0 {}
+[22:59:42] round 0: og (host load 7.71)
+opengauss READY after 1363 ms 
+opengauss read  clients=1       14184 ops/s p50=0.069 p95=0.080 p99=0.086 ms errors=0 {}
+opengauss read  clients=4       47781 ops/s p50=0.082 p95=0.101 p99=0.115 ms errors=0 {}
+opengauss read  clients=16      90666 ops/s p50=0.144 p95=0.419 p99=0.671 ms errors=0 {}
+opengauss read  clients=64     105748 ops/s p50=0.441 p95=1.058 p99=4.946 ms errors=0 {}
+opengauss mixed clients=1        6962 ops/s p50=0.102 p95=0.316 p99=0.329 ms errors=0 {}
+opengauss mixed clients=4       34320 ops/s p50=0.073 p95=0.313 p99=0.375 ms errors=0 {}
+opengauss mixed clients=16      70420 ops/s p50=0.133 p95=0.637 p99=0.884 ms errors=0 {}
+opengauss mixed clients=64      81834 ops/s p50=0.444 p95=2.564 p99=3.681 ms errors=0 {}
+[23:03:41] round 1: og (host load 7.24)
+opengauss READY after 1292 ms 
+opengauss read  clients=1       14328 ops/s p50=0.068 p95=0.080 p99=0.086 ms errors=0 {}
+opengauss read  clients=4       47616 ops/s p50=0.082 p95=0.103 p99=0.118 ms errors=0 {}
+opengauss read  clients=16      89694 ops/s p50=0.144 p95=0.432 p99=0.701 ms errors=0 {}
+opengauss read  clients=64     106294 ops/s p50=0.440 p95=1.059 p99=4.892 ms errors=0 {}
+opengauss mixed clients=1        6880 ops/s p50=0.103 p95=0.319 p99=0.331 ms errors=0 {}
+opengauss mixed clients=4       34330 ops/s p50=0.073 p95=0.315 p99=0.379 ms errors=0 {}
+opengauss mixed clients=16      57096 ops/s p50=0.131 p95=0.802 p99=2.330 ms errors=0 {}
+opengauss mixed clients=64      80713 ops/s p50=0.408 p95=2.678 p99=3.834 ms errors=0 {}
+[23:07:41] round 1: pg (host load 6.68)
+postgres READY after 101 ms 
+postgres read  clients=1       16165 ops/s p50=0.061 p95=0.072 p99=0.077 ms errors=0 {}
+postgres read  clients=4       52292 ops/s p50=0.075 p95=0.091 p99=0.105 ms errors=0 {}
+postgres read  clients=16      99420 ops/s p50=0.135 p95=0.351 p99=0.585 ms errors=0 {}
+postgres read  clients=64     120441 ops/s p50=0.440 p95=0.908 p99=3.028 ms errors=0 {}
+postgres mixed clients=1       15516 ops/s p50=0.050 p95=0.128 p99=0.138 ms errors=0 {}
+postgres mixed clients=4       42873 ops/s p50=0.067 p95=0.227 p99=0.274 ms errors=0 {}
+postgres mixed clients=16      80556 ops/s p50=0.120 p95=0.537 p99=0.792 ms errors=0 {}
+postgres mixed clients=64      97030 ops/s p50=0.330 p95=2.208 p99=3.599 ms errors=0 {}
+[23:11:28] round 2: pg (host load 7.44)
+postgres READY after 100 ms 
+postgres read  clients=1       16021 ops/s p50=0.062 p95=0.072 p99=0.077 ms errors=0 {}
+postgres read  clients=4       51954 ops/s p50=0.075 p95=0.092 p99=0.106 ms errors=0 {}
+postgres read  clients=16      99486 ops/s p50=0.136 p95=0.340 p99=0.563 ms errors=0 {}
+postgres read  clients=64     121042 ops/s p50=0.456 p95=0.866 p99=2.615 ms errors=0 {}
+postgres mixed clients=1       15556 ops/s p50=0.050 p95=0.126 p99=0.136 ms errors=0 {}
+postgres mixed clients=4       43306 ops/s p50=0.067 p95=0.223 p99=0.268 ms errors=0 {}
+postgres mixed clients=16      81613 ops/s p50=0.121 p95=0.525 p99=0.756 ms errors=0 {}
+postgres mixed clients=64      96891 ops/s p50=0.335 p95=2.169 p99=3.448 ms errors=0 {}
+[23:15:14] round 2: og (host load 7.38)
+opengauss READY after 1358 ms 
+opengauss read  clients=1       13895 ops/s p50=0.071 p95=0.082 p99=0.088 ms errors=0 {}
+opengauss read  clients=4       47568 ops/s p50=0.082 p95=0.102 p99=0.116 ms errors=0 {}
+opengauss read  clients=16      90222 ops/s p50=0.143 p95=0.427 p99=0.694 ms errors=0 {}
+opengauss read  clients=64     104942 ops/s p50=0.445 p95=1.049 p99=5.092 ms errors=0 {}
+opengauss mixed clients=1        6853 ops/s p50=0.103 p95=0.320 p99=0.338 ms errors=0 {}
+opengauss mixed clients=4       34092 ops/s p50=0.073 p95=0.314 p99=0.377 ms errors=0 {}
+opengauss mixed clients=16      69302 ops/s p50=0.133 p95=0.643 p99=0.911 ms errors=0 {}
+opengauss mixed clients=64      82309 ops/s p50=0.471 p95=2.391 p99=3.595 ms errors=0 {}
+[23:19:14] load experiment finished

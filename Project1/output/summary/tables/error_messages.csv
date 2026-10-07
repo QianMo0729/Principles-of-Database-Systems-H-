@@ -1,0 +1,12 @@
+situation,PostgreSQL,openGauss
+duplicate_key,"23505: ERROR: duplicate key value violates unique constraint ""err_parent_pkey""","23505: ERROR: duplicate key value violates unique constraint ""err_parent_pkey"""
+not_null,"23502: ERROR: null value in column ""name"" of relation ""err_parent"" violates not-null constraint","23502: ERROR: null value in column ""name"" violates not-null constraint"
+foreign_key,"23503: ERROR: insert or update on table ""err_child"" violates foreign key constraint ""err_child_parent_fkey""","23503: ERROR: insert or update on table ""err_child"" violates foreign key constraint ""err_child_parent_fkey"""
+check_constraint,"23514: ERROR: new row for relation ""err_child"" violates check constraint ""err_child_qty_check""","23514: ERROR: new row for relation ""err_child"" violates check constraint ""err_child_qty_check"""
+value_too_long,22001: ERROR: value too long for type character varying(8),22001: ERROR: value too long for type character varying(8)
+bad_cast,"22P02: ERROR: invalid input syntax for type integer: ""abc""","22P02: ERROR: invalid input syntax for integer: ""abc"""
+division_by_zero,22012: ERROR: division by zero,22012: ERROR: division by zero
+syntax_error,"42601: ERROR: syntax error at or near ""SELEC""","42601: ERROR: syntax error at or near ""SELEC"""
+unknown_table,"42P01: ERROR: relation ""no_such_table"" does not exist","42P01: ERROR: relation ""no_such_table"" does not exist on gaussdb"
+unknown_column,"42703: ERROR: column ""no_such_column"" does not exist","42703: ERROR: column ""no_such_column"" does not exist"
+open_until_refused,"53300: FATAL: sorry, too many clients already","53300: FATAL: Too many clients already, current: 103, max_connections/reserved: 100/3."

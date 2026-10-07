@@ -1,0 +1,8 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'The Godfather'
+
+Streaming(type: LOCAL GATHER dop: 1/3)  (cost=0.00..114889.51 rows=139 width=25) (actual time=[214.139,214.910]..[214.139,214.910], rows=47)
+  ->  Seq Scan on titles  (cost=0.00..114888.77 rows=139 width=25) (actual time=[2.055,211.726]..[20.185,212.507], rows=47)
+        Filter: (primary_title = 'The Godfather'::text)
+        Rows Removed by Filter: 12842706
+        Buffers: shared max hit=31653 min hit=31595 max read=27801 min read=27653
+Total runtime: 215.125 ms

@@ -1,0 +1,4 @@
+total 534928
+-rw-r--r-- 1 501 root    310913057 Oct  7 03:47 name.basics.tsv.gz
+-rw-r--r-- 1 501 root    228159521 Oct  7 03:44 title.basics.tsv.gz
+-rw-r--r-- 1 501 dialout   8679103 Oct  7 04:10 title.ratings.tsv.gz

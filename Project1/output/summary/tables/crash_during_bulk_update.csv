@@ -1,0 +1,5 @@
+case,kill_landed,rows_before,rows_after,rows_lost,rows_with_Ttt_before,rows_with_Ttt_after,truncated_last_line,leftover_temp_bytes
+PostgreSQL: one UPDATE,1.0,1573840.0,1573840.0,0.0,1.0,1.0,,
+openGauss: one UPDATE,1.0,1573840.0,1573840.0,0.0,1.0,1.0,,
+File: overwrite in place,,1573840.0,779602.0,794238.0,1.0,63573.0,1.0,0.0
+File: temp file + rename,,1573840.0,1573840.0,0.0,1.0,1.0,0.0,46194681.0

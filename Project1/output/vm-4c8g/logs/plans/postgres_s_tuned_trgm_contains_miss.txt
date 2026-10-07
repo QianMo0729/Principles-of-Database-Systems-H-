@@ -1,0 +1,13 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Zqxjv%'
+
+Bitmap Heap Scan on titles  (cost=43.03..84.60 rows=11 width=25) (actual time=0.003..0.003 rows=0.00 loops=1)
+  Recheck Cond: (primary_title ~~ '%Zqxjv%'::text)
+  Buffers: shared hit=10
+  ->  Bitmap Index Scan on idx_titles_trgm  (cost=0.00..43.02 rows=11 width=0) (actual time=0.002..0.002 rows=0.00 loops=1)
+        Index Cond: (primary_title ~~ '%Zqxjv%'::text)
+        Index Searches: 1
+        Buffers: shared hit=10
+Planning:
+  Buffers: shared hit=1
+Planning Time: 0.012 ms
+Execution Time: 0.005 ms

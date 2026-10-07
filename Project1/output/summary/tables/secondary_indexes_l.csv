@@ -1,0 +1,10 @@
+item,PostgreSQL,openGauss
+B-tree supported,1.0,1.0
+B-tree build_ms,2581.8727,12173.0305
+B-tree index_mb,314.4609,497.5859
+trigram GIN supported,1.0,0.0
+trigram GIN build_ms,12168.9609,
+trigram GIN index_mb,446.7188,
+full-text GIN supported,1.0,1.0
+full-text GIN build_ms,10307.9883,30832.4811
+full-text GIN index_mb,238.5625,240.5938

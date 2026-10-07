@@ -1,0 +1,12 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'Episode #1.1'
+
+Seq Scan on titles  (cost=0.00..338346.91 rows=58216 width=25) (actual time=5.864..403.252 rows=60684.00 loops=1)
+  Filter: (primary_title = 'Episode #1.1'::text)
+  Rows Removed by Filter: 12782069
+  Buffers: shared hit=2277 read=175547
+Planning Time: 0.032 ms
+JIT:
+  Functions: 4
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.086 ms (Deform 0.035 ms), Inlining 0.000 ms, Optimization 0.092 ms, Emission 1.131 ms, Total 1.309 ms
+Execution Time: 404.862 ms

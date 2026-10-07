@@ -1,0 +1,8 @@
+SELECT id, primary_title FROM titles WHERE id = 1334253
+
+Index Scan using titles_pkey on titles  (cost=0.43..8.45 rows=1 width=25) (actual time=0.002..0.002 rows=1.00 loops=1)
+  Index Cond: (id = 1334253)
+  Index Searches: 1
+  Buffers: shared hit=4
+Planning Time: 0.004 ms
+Execution Time: 0.005 ms

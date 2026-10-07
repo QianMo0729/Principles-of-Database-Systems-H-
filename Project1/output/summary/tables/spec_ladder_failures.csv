@@ -1,0 +1,6 @@
+spec,system,config,operation,note
+1c1g,openGauss,default,start,"2026-10-07 06:55:28.091 [unknown] [unknown] localhost 263393800130592 0[0:0#0]  0 [BACKEND] HINT:  This error usually means that openGauss's request for a shared memory segment exceeded available memory or swap space, or exceeded your kernel's SHMALL parameter.  You can either reduce the request siz 	The openGauss documentation contains more information about shared memory configuration."
+1c512m,openGauss,default,fresh_install,"same directory as ""/usr/local/opengauss/bin/gs_initdb"". Check your installation. no data was returned by command """"/usr/local/opengauss/bin/gaussdb"" -V"""
+1c512m,openGauss,default,start,(the server process exits without writing a message; see logs/diagnosis_og_start.txt of that spec)
+1c512m,openGauss,tuned,start,(the server process exits without writing a message; see logs/diagnosis_og_start.txt of that spec)
+2c2g,openGauss,default,start,"2026-10-07 07:01:16.950 [unknown] [unknown] localhost 253651881463840 0[0:0#0]  0 [BACKEND] HINT:  This error usually means that openGauss's request for a shared memory segment exceeded available memory or swap space, or exceeded your kernel's SHMALL parameter.  You can either reduce the request siz 	The openGauss documentation contains more information about shared memory configuration."

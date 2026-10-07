@@ -1,0 +1,16 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Love%'
+
+Gather  (cost=1000.00..257218.35 rows=114990 width=25) (actual time=1.339..211.177 rows=70524.00 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=11259 read=166565
+  ->  Parallel Seq Scan on titles  (cost=0.00..244719.35 rows=47912 width=25) (actual time=1.560..203.698 rows=23508.00 loops=3)
+        Filter: (primary_title ~~ '%Love%'::text)
+        Rows Removed by Filter: 4257410
+        Buffers: shared hit=11259 read=166565
+Planning Time: 0.039 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.296 ms (Deform 0.123 ms), Inlining 0.000 ms, Optimization 0.265 ms, Emission 4.090 ms, Total 4.652 ms
+Execution Time: 212.751 ms

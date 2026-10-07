@@ -1,0 +1,9 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE 'Star Wars%'
+
+Index Scan using idx_titles_btree on titles  (cost=0.56..8.58 rows=1143 width=25) (actual time=0.006..0.785 rows=3266.00 loops=1)
+  Index Cond: ((primary_title >= 'Star Wars'::text) AND (primary_title < 'Star Wart'::text))
+  Filter: (primary_title ~~ 'Star Wars%'::text)
+  Index Searches: 1
+  Buffers: shared hit=3039
+Planning Time: 0.023 ms
+Execution Time: 0.847 ms

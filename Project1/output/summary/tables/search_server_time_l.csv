@@ -1,0 +1,12 @@
+operation,PostgreSQL: no index,PostgreSQL: B-tree,PostgreSQL: trigram GIN,PostgreSQL: full-text GIN,openGauss: no index,openGauss: B-tree,openGauss: full-text GIN,"PostgreSQL: no index, parallel query off","openGauss: no index, parallel query on"
+point,0.007,0.008,0.008,,0.014,0.013,,0.005,0.02
+exact_common,149.224,32.223,522.139,,662.604,39.988,,404.862,244.533
+exact_rare,142.83,0.019,15.873,,629.481,0.039,,400.63,215.125
+exact_miss,138.625,0.006,0.234,,598.702,0.01,,391.535,181.343
+prefix,149.593,0.847,21.614,,625.308,1.206,,422.764,192.388
+contains_common,217.283,226.298,45.091,,834.495,825.265,,606.882,255.618
+contains_rare,215.202,217.832,3.776,,826.706,796.188,,601.793,244.554
+contains_miss,221.075,224.492,0.006,,818.818,780.254,,595.942,241.544
+word_common,,,,37.403,,,39.822,,
+word_rare,,,,0.136,,,0.205,,
+word_miss,,,,0.004,,,0.009,,

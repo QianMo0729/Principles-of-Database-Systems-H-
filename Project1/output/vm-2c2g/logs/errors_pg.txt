@@ -1,0 +1,10 @@
+postgres duplicate_key      23505: ERROR: duplicate key value violates unique constraint "err_parent_pkey"
+postgres not_null           23502: ERROR: null value in column "name" of relation "err_parent" violates not-null constraint
+postgres foreign_key        23503: ERROR: insert or update on table "err_child" violates foreign key constraint "err_child_parent_fkey"
+postgres check_constraint   23514: ERROR: new row for relation "err_child" violates check constraint "err_child_qty_check"
+postgres value_too_long     22001: ERROR: value too long for type character varying(8)
+postgres bad_cast           22P02: ERROR: invalid input syntax for type integer: "abc"
+postgres division_by_zero   22012: ERROR: division by zero
+postgres syntax_error       42601: ERROR: syntax error at or near "SELEC"
+postgres unknown_table      42P01: ERROR: relation "no_such_table" does not exist
+postgres unknown_column     42703: ERROR: column "no_such_column" does not exist

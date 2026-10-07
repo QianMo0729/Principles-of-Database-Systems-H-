@@ -1,0 +1,3 @@
+who,rounds,accepted,rejected_duplicate,other_errors,rows_in_table
+PostgreSQL,300.0,300.0,4500.0,0.0,300.0
+openGauss,300.0,300.0,4500.0,0.0,300.0

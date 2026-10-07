@@ -1,0 +1,119 @@
+[23:43:54] switching VM to spec 1c512m (1 CPU, 0.5 GiB)
+[23:44:08] == spec 1c512m (host load 5.01)
+[23:44:09] 1c512m pg: fresh install
+postgres READY after 1139 ms 
+[23:44:15] 1c512m pg: full data, default config
+postgres READY after 100 ms 
+postgres mixed clients=16      21584 ops/s p50=0.633 p95=1.324 p99=2.734 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3812 ms 
+postgres heavy join_aggregate   ok in 2841 ms 
+[23:45:10] 1c512m pg: full data, tuned config
+postgres READY after 99 ms 
+postgres mixed clients=16      21790 ops/s p50=0.632 p95=1.296 p99=2.469 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3866 ms 
+postgres heavy join_aggregate   ok in 2793 ms 
+[23:46:06] 1c512m og: fresh install
+opengauss NOT READY after 120078 ms 08001: Connection to 192.168.64.2:15440 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+[23:48:06] 1c512m og: full data, default config
+opengauss NOT READY after 150081 ms 08001: Connection to 192.168.64.2:15433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+[23:50:37] 1c512m og: full data, tuned config
+opengauss NOT READY after 150113 ms 08001: Connection to 192.168.64.2:15433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+[23:53:08] switching VM to spec 1c1g (1 CPU, 1 GiB)
+[23:53:19] == spec 1c1g (host load 1.60)
+[23:53:19] 1c1g pg: fresh install
+postgres READY after 1119 ms 
+[23:53:26] 1c1g pg: full data, default config
+postgres READY after 96 ms 
+postgres mixed clients=16      23570 ops/s p50=0.610 p95=1.274 p99=1.737 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3718 ms 
+postgres heavy join_aggregate   ok in 2559 ms 
+[23:54:21] 1c1g pg: full data, tuned config
+postgres READY after 97 ms 
+postgres mixed clients=16      23159 ops/s p50=0.624 p95=1.269 p99=1.825 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3769 ms 
+postgres heavy join_aggregate   ok in 2575 ms 
+[23:55:16] 1c1g og: fresh install
+opengauss READY after 6085 ms 
+[23:55:27] 1c1g og: full data, default config
+opengauss NOT READY after 150059 ms 08001: Connection to 192.168.64.2:15433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+[23:57:58] 1c1g og: full data, tuned config
+opengauss READY after 819 ms 
+opengauss mixed clients=16         17 ops/s p50=880.119 p95=1863.971 p99=2226.268 ms errors=0 {}
+opengauss heavy sort_all_titles  ok in 7262 ms 
+opengauss heavy join_aggregate   ok in 2686 ms 
+[23:59:01] switching VM to spec 2c2g (2 CPU, 2 GiB)
+[23:59:12] == spec 2c2g (host load 2.98)
+[23:59:12] 2c2g pg: fresh install
+postgres READY after 1127 ms 
+[23:59:19] 2c2g pg: full data, default config
+postgres READY after 97 ms 
+postgres mixed clients=16      47258 ops/s p50=0.229 p95=0.895 p99=1.207 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3382 ms 
+postgres heavy join_aggregate   ok in 1309 ms 
+[00:00:11] 2c2g pg: full data, tuned config
+postgres READY after 97 ms 
+postgres mixed clients=16      45389 ops/s p50=0.245 p95=0.893 p99=1.210 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3469 ms 
+postgres heavy join_aggregate   ok in 1525 ms 
+[00:01:04] 2c2g og: fresh install
+opengauss READY after 6442 ms 
+[00:01:16] 2c2g og: full data, default config
+opengauss NOT READY after 150105 ms 08001: Connection to 192.168.64.2:15433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+[00:03:47] 2c2g og: full data, tuned config
+opengauss READY after 1388 ms 
+opengauss mixed clients=16      28897 ops/s p50=0.367 p95=1.770 p99=2.990 ms errors=0 {}
+opengauss heavy sort_all_titles  ok in 6103 ms 
+opengauss heavy join_aggregate   ok in 2897 ms 
+[00:04:47] switching VM to spec 2c4g (2 CPU, 4 GiB)
+[00:04:59] == spec 2c4g (host load 2.59)
+[00:04:59] 2c4g pg: fresh install
+postgres READY after 1129 ms 
+[00:05:05] 2c4g pg: full data, default config
+postgres READY after 98 ms 
+postgres mixed clients=16      53898 ops/s p50=0.229 p95=0.844 p99=1.197 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3188 ms 
+postgres heavy join_aggregate   ok in 1024 ms 
+[00:05:58] 2c4g pg: full data, tuned config
+postgres READY after 97 ms 
+postgres mixed clients=16      55074 ops/s p50=0.218 p95=0.823 p99=1.168 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3186 ms 
+postgres heavy join_aggregate   ok in 1450 ms 
+[00:06:50] 2c4g og: fresh install
+opengauss READY after 7211 ms 
+[00:07:02] 2c4g og: full data, default config
+opengauss READY after 1014 ms 
+opengauss mixed clients=16      43637 ops/s p50=0.256 p95=0.916 p99=1.382 ms errors=0 {}
+opengauss heavy sort_all_titles  ok in 6567 ms 
+opengauss heavy join_aggregate   ok in 3586 ms 
+[00:08:03] 2c4g og: full data, tuned config
+opengauss READY after 1262 ms 
+opengauss mixed clients=16      43737 ops/s p50=0.252 p95=0.924 p99=1.406 ms errors=0 {}
+opengauss heavy sort_all_titles  ok in 6244 ms 
+opengauss heavy join_aggregate   ok in 3079 ms 
+[00:09:04] switching VM to spec 4c8g (4 CPU, 8 GiB)
+[00:09:18] == spec 4c8g (host load 3.85)
+[00:09:18] 4c8g pg: fresh install
+postgres READY after 1129 ms 
+[00:09:24] 4c8g pg: full data, default config
+postgres READY after 98 ms 
+postgres mixed clients=16      78405 ops/s p50=0.120 p95=0.553 p99=0.844 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3211 ms 
+postgres heavy join_aggregate   ok in 652 ms 
+[00:10:16] 4c8g pg: full data, tuned config
+postgres READY after 100 ms 
+postgres mixed clients=16      83501 ops/s p50=0.118 p95=0.509 p99=0.735 ms errors=0 {}
+postgres heavy sort_all_titles  ok in 3000 ms 
+postgres heavy join_aggregate   ok in 822 ms 
+[00:11:07] 4c8g og: fresh install
+opengauss READY after 7450 ms 
+[00:11:20] 4c8g og: full data, default config
+opengauss READY after 1525 ms 
+opengauss mixed clients=16      59026 ops/s p50=0.142 p95=0.732 p99=1.448 ms errors=0 {}
+opengauss heavy sort_all_titles  ok in 5988 ms 
+opengauss heavy join_aggregate   ok in 2637 ms 
+[00:12:20] 4c8g og: full data, tuned config
+opengauss READY after 1127 ms 
+opengauss mixed clients=16      70034 ops/s p50=0.133 p95=0.628 p99=0.873 ms errors=0 {}
+opengauss heavy sort_all_titles  ok in 5187 ms 
+opengauss heavy join_aggregate   ok in 2172 ms 
+[00:13:19] spec ladder finished

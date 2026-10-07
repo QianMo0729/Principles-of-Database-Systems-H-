@@ -1,0 +1,12 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Godfather%'
+
+Seq Scan on titles  (cost=0.00..338346.91 rows=1141 width=25) (actual time=1.746..601.597 rows=474.00 loops=1)
+  Filter: (primary_title ~~ '%Godfather%'::text)
+  Rows Removed by Filter: 12842279
+  Buffers: shared hit=13797 read=164027
+Planning Time: 0.034 ms
+JIT:
+  Functions: 4
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.093 ms (Deform 0.036 ms), Inlining 0.000 ms, Optimization 0.105 ms, Emission 1.021 ms, Total 1.218 ms
+Execution Time: 601.793 ms

@@ -1,0 +1,15 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Godfather%'
+
+Bitmap Heap Scan on titles  (cost=154.39..4436.59 rows=1138 width=25) (actual time=3.631..3.763 rows=474.00 loops=1)
+  Recheck Cond: (primary_title ~~ '%Godfather%'::text)
+  Rows Removed by Index Recheck: 9
+  Heap Blocks: exact=460
+  Buffers: shared hit=1022
+  ->  Bitmap Index Scan on idx_titles_trgm  (cost=0.00..154.11 rows=1138 width=0) (actual time=3.611..3.611 rows=483.00 loops=1)
+        Index Cond: (primary_title ~~ '%Godfather%'::text)
+        Index Searches: 1
+        Buffers: shared hit=562
+Planning:
+  Buffers: shared hit=1
+Planning Time: 0.015 ms
+Execution Time: 3.776 ms

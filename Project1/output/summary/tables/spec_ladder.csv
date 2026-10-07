@@ -1,0 +1,21 @@
+spec,system,settings,fresh install,starts,ready (ms),idle memory (MiB),ops/s,p95 (ms),p99 (ms),failed requests,sort all (ms),join+agg (ms),peak memory (MiB),OOM kills,meets target
+1c512m,PostgreSQL,default,ok,yes,100.354,27.6,21583.7,1.324,2.734,0.0,3811.71,2840.86,256.6,0.0,yes
+1c512m,PostgreSQL,tuned,ok,yes,98.8532,39.6,21790.0,1.296,2.469,0.0,3865.9,2793.2,245.0,0.0,yes
+1c512m,openGauss,default,FAILS,NO,,,,,,,,,,0.0,no
+1c512m,openGauss,tuned,FAILS,NO,,,,,,,,,,0.0,no
+1c1g,PostgreSQL,default,ok,yes,96.3096,28.5,23569.5,1.274,1.737,0.0,3717.86,2558.64,648.0,0.0,yes
+1c1g,PostgreSQL,tuned,ok,yes,97.3816,41.1,23159.5,1.269,1.825,0.0,3768.84,2574.91,555.4,0.0,yes
+1c1g,openGauss,default,ok,NO,,,,,,,,,,0.0,no
+1c1g,openGauss,tuned,ok,yes,819.277,513.7,16.7,1863.97,2226.27,0.0,7262.45,2686.16,762.4,0.0,no
+2c2g,PostgreSQL,default,ok,yes,97.4584,28.5,47258.3,0.895,1.207,0.0,3382.15,1308.53,1215.6,0.0,yes
+2c2g,PostgreSQL,tuned,ok,yes,97.3391,44.5,45389.0,0.893,1.21,0.0,3469.4,1525.48,1321.7,0.0,yes
+2c2g,openGauss,default,ok,NO,,,,,,,,,,0.0,no
+2c2g,openGauss,tuned,ok,yes,1387.99,689.8,28897.1,1.77,2.99,0.0,6103.2,2896.85,1514.2,0.0,yes
+2c4g,PostgreSQL,default,ok,yes,98.0916,28.5,53897.5,0.844,1.197,0.0,3188.26,1023.89,2771.4,0.0,yes
+2c4g,PostgreSQL,tuned,ok,yes,96.8486,57.9,55073.9,0.823,1.168,0.0,3185.81,1449.83,2574.2,0.0,yes
+2c4g,openGauss,default,ok,yes,1013.57,752.2,43636.6,0.916,1.382,0.0,6566.98,3586.0,2483.6,0.0,yes
+2c4g,openGauss,tuned,ok,yes,1262.45,649.9,43737.4,0.924,1.406,0.0,6243.72,3078.51,2448.0,0.0,yes
+4c8g,PostgreSQL,default,ok,yes,98.3388,28.6,78405.1,0.553,0.844,0.0,3211.23,651.675,2800.8,0.0,yes
+4c8g,PostgreSQL,tuned,ok,yes,99.8885,79.1,83500.9,0.509,0.735,0.0,2999.71,822.214,2676.0,0.0,yes
+4c8g,openGauss,default,ok,yes,1524.62,779.8,59025.6,0.732,1.448,0.0,5987.52,2637.18,4167.3,0.0,yes
+4c8g,openGauss,tuned,ok,yes,1127.24,606.4,70033.5,0.628,0.873,0.0,5186.96,2171.98,3122.1,0.0,yes

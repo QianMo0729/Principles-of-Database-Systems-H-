@@ -1,0 +1,8 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Godfather%'
+
+Streaming(type: LOCAL GATHER dop: 1/3)  (cost=0.00..114894.83 rows=1146 width=25) (actual time=[137.602,244.358]..[137.602,244.358], rows=474)
+  ->  Seq Scan on titles  (cost=0.00..114888.77 rows=1146 width=25) (actual time=[0.426,241.546]..[1.361,241.977], rows=474)
+        Filter: (primary_title ~~ '%Godfather%'::text)
+        Rows Removed by Filter: 12842279
+        Buffers: shared max hit=59400 min hit=59300
+Total runtime: 244.554 ms

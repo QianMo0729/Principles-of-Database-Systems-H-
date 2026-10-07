@@ -1,0 +1,15 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Love%'
+
+Bitmap Heap Scan on titles  (cost=48.38..4330.57 rows=1138 width=25) (actual time=10.027..43.805 rows=70524.00 loops=1)
+  Recheck Cond: (primary_title ~~ '%Love%'::text)
+  Rows Removed by Index Recheck: 6853
+  Heap Blocks: exact=55301
+  Buffers: shared hit=55419
+  ->  Bitmap Index Scan on idx_titles_trgm  (cost=0.00..48.10 rows=1138 width=0) (actual time=5.848..5.848 rows=77377.00 loops=1)
+        Index Cond: (primary_title ~~ '%Love%'::text)
+        Index Searches: 1
+        Buffers: shared hit=118
+Planning:
+  Buffers: shared hit=1
+Planning Time: 0.044 ms
+Execution Time: 45.091 ms

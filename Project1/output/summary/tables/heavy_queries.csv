@@ -1,0 +1,5 @@
+operation,metric,PostgreSQL (2c2g),openGauss (2c2g)
+sort_all_titles,completed,1.0,1.0
+sort_all_titles,latency_ms,3288.4,5826.02
+join_aggregate,completed,1.0,1.0
+join_aggregate,latency_ms,1371.78,2634.82

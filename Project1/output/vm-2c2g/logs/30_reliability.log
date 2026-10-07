@@ -1,0 +1,124 @@
+[23:19:14] switching VM to spec 2c2g (2 CPU, 2 GiB)
+[23:19:29] == pg on 2c2g (host load 6.66)
+postgres READY after 1135 ms 
+[23:19:30] pg: concurrent increments of one row
+postgres counter atomic       expected=8000 actual=8000 lost=0 retries=0 (10013 ops/s)
+postgres counter atomic       expected=8000 actual=8000 lost=0 retries=0 (10501 ops/s)
+postgres counter atomic       expected=8000 actual=8000 lost=0 retries=0 (10692 ops/s)
+postgres counter naive        expected=8000 actual=1087 lost=6913 retries=0 (6110 ops/s)
+postgres counter naive        expected=8000 actual=1064 lost=6936 retries=0 (6380 ops/s)
+postgres counter naive        expected=8000 actual=1080 lost=6920 retries=0 (6483 ops/s)
+postgres counter forupdate    expected=8000 actual=8000 lost=0 retries=0 (4744 ops/s)
+postgres counter forupdate    expected=8000 actual=8000 lost=0 retries=0 (4977 ops/s)
+postgres counter forupdate    expected=8000 actual=8000 lost=0 retries=0 (5032 ops/s)
+postgres counter repeatable   expected=8000 actual=8000 lost=0 retries=25938 (2569 ops/s)
+postgres counter repeatable   expected=8000 actual=8000 lost=0 retries=26506 (2578 ops/s)
+postgres counter repeatable   expected=8000 actual=8000 lost=0 retries=27919 (2442 ops/s)
+[23:19:52] pg: concurrent inserts of the same key
+postgres unique race: rounds=300 accepted=300 rejected=4500 other=0 rows=300
+[23:19:52] pg: error messages
+postgres duplicate_key      23505: ERROR: duplicate key value violates unique constraint "err_parent_pkey"
+postgres not_null           23502: ERROR: null value in column "name" of relation "err_parent" violates not-null constraint
+postgres foreign_key        23503: ERROR: insert or update on table "err_child" violates foreign key constraint "err_child_parent_fkey"
+postgres check_constraint   23514: ERROR: new row for relation "err_child" violates check constraint "err_child_qty_check"
+postgres value_too_long     22001: ERROR: value too long for type character varying(8)
+postgres bad_cast           22P02: ERROR: invalid input syntax for type integer: "abc"
+postgres division_by_zero   22012: ERROR: division by zero
+postgres syntax_error       42601: ERROR: syntax error at or near "SELEC"
+postgres unknown_table      42P01: ERROR: relation "no_such_table" does not exist
+postgres unknown_column     42703: ERROR: column "no_such_column" does not exist
+[23:19:52] pg: connection limit
+postgres connection limit: accepted=100 refusal=[53300: FATAL: sorry, too many clients already] usable afterwards=true
+[23:19:53] pg: kill -9 under write load
+postgres READY after 407 ms 
+postgres crash #0: acked=121823 missing=0 partial=0 unbalanced=0 in-doubt-kept=5
+postgres READY after 353 ms 
+postgres crash #1: acked=122023 missing=0 partial=0 unbalanced=0 in-doubt-kept=2
+postgres READY after 360 ms 
+postgres crash #2: acked=122833 missing=0 partial=0 unbalanced=0 in-doubt-kept=2
+postgres READY after 426 ms 
+postgres crash #3: acked=122276 missing=0 partial=0 unbalanced=0 in-doubt-kept=0
+postgres READY after 362 ms 
+postgres crash #4: acked=122847 missing=0 partial=0 unbalanced=0 in-doubt-kept=1
+[23:20:39] pg: kill -9 in the middle of one bulk UPDATE
+READY
+COMPLETED rows=130384 ms=288
+postgres READY after 419 ms 
+READY
+INTERRUPTED after 185 ms: 08006: An I/O error occurred while sending to the backend.
+postgres bulk crash #0: rows 1573840 -> 1573840, rows with Ttt 1 -> 1
+postgres READY after 340 ms 
+READY
+INTERRUPTED after 146 ms: 08006: An I/O error occurred while sending to the backend.
+postgres bulk crash #1: rows 1573840 -> 1573840, rows with Ttt 1 -> 1
+postgres READY after 282 ms 
+READY
+INTERRUPTED after 118 ms: 08006: An I/O error occurred while sending to the backend.
+postgres bulk crash #2: rows 1573840 -> 1573840, rows with Ttt 1 -> 1
+[23:20:45] pg: heavy analytical queries
+postgres heavy sort_all_titles  ok in 3288 ms 
+postgres heavy join_aggregate   ok in 1372 ms 
+[23:20:50] pg: sustained load for 600 s
+postgres mixed clients=16      44345 ops/s p50=0.242 p95=0.921 p99=1.234 ms errors=0 {}
+[23:31:03] == og on 2c2g (host load 6.13)
+opengauss READY after 1370 ms 
+[23:31:05] og: concurrent increments of one row
+opengauss counter atomic       expected=8000 actual=8000 lost=0 retries=0 (4858 ops/s)
+opengauss counter atomic       expected=8000 actual=8000 lost=0 retries=0 (5374 ops/s)
+opengauss counter atomic       expected=8000 actual=8000 lost=0 retries=0 (5643 ops/s)
+opengauss counter naive        expected=8000 actual=1101 lost=6899 retries=0 (3346 ops/s)
+opengauss counter naive        expected=8000 actual=1105 lost=6895 retries=0 (3051 ops/s)
+opengauss counter naive        expected=8000 actual=1112 lost=6888 retries=0 (3123 ops/s)
+opengauss counter forupdate    expected=8000 actual=8000 lost=0 retries=0 (2251 ops/s)
+opengauss counter forupdate    expected=8000 actual=8000 lost=0 retries=0 (2119 ops/s)
+opengauss counter forupdate    expected=8000 actual=8000 lost=0 retries=0 (2215 ops/s)
+opengauss counter repeatable   expected=8000 actual=8000 lost=0 retries=12824 (550 ops/s)
+opengauss counter repeatable   expected=8000 actual=8000 lost=0 retries=12643 (558 ops/s)
+opengauss counter repeatable   expected=8000 actual=8000 lost=0 retries=13003 (543 ops/s)
+[23:32:12] og: concurrent inserts of the same key
+opengauss unique race: rounds=300 accepted=300 rejected=4500 other=0 rows=300
+[23:32:17] og: error messages
+opengauss duplicate_key      23505: [*.*.64.1:63303/*.*.64.2:15433] ERROR: duplicate key value violates unique constraint "err_parent_pkey"
+opengauss not_null           23502: [*.*.64.1:63303/*.*.64.2:15433] ERROR: null value in column "name" violates not-null constraint
+opengauss foreign_key        23503: [*.*.64.1:63303/*.*.64.2:15433] ERROR: insert or update on table "err_child" violates foreign key constraint "err_child_parent_fkey"
+opengauss check_constraint   23514: [*.*.64.1:63303/*.*.64.2:15433] ERROR: new row for relation "err_child" violates check constraint "err_child_qty_check"
+opengauss value_too_long     22001: [*.*.64.1:63303/*.*.64.2:15433] ERROR: value too long for type character varying(8)
+opengauss bad_cast           22P02: [*.*.64.1:63303/*.*.64.2:15433] ERROR: invalid input syntax for integer: "abc"
+opengauss division_by_zero   22012: [*.*.64.1:63303/*.*.64.2:15433] ERROR: division by zero
+opengauss syntax_error       42601: [*.*.64.1:63303/*.*.64.2:15433] ERROR: syntax error at or near "SELEC"
+opengauss unknown_table      42P01: [*.*.64.1:63303/*.*.64.2:15433] ERROR: relation "no_such_table" does not exist on gaussdb
+opengauss unknown_column     42703: [*.*.64.1:63303/*.*.64.2:15433] ERROR: column "no_such_column" does not exist
+[23:32:17] og: connection limit
+opengauss connection limit: accepted=103 refusal=[53300: [*.*.64.1:63408/*.*.64.2:15433] FATAL: Too many clients already, current: 103, max_connections/reserved: 100/3.] usable afterwards=true
+[23:32:18] og: kill -9 under write load
+opengauss READY after 1663 ms 
+opengauss crash #0: acked=49550 missing=0 partial=0 unbalanced=0 in-doubt-kept=0
+opengauss READY after 1632 ms 
+opengauss crash #1: acked=43912 missing=0 partial=0 unbalanced=0 in-doubt-kept=2
+opengauss READY after 1599 ms 
+opengauss crash #2: acked=43409 missing=0 partial=0 unbalanced=0 in-doubt-kept=0
+opengauss READY after 1586 ms 
+opengauss crash #3: acked=47434 missing=0 partial=0 unbalanced=0 in-doubt-kept=0
+opengauss READY after 1665 ms 
+opengauss crash #4: acked=49498 missing=0 partial=0 unbalanced=0 in-doubt-kept=5
+[23:33:11] og: kill -9 in the middle of one bulk UPDATE
+READY
+COMPLETED rows=130384 ms=358
+opengauss READY after 1534 ms 
+READY
+INTERRUPTED after 239 ms: 08006: [*.*.64.1:63650/*.*.64.2:15433] socket is not closed; Urgent packet sent to backend successfully; An I/O error occured while sending to the backend.detail:EOF Exception;
+opengauss bulk crash #0: rows 1573840 -> 1573840, rows with Ttt 1 -> 1
+opengauss READY after 1538 ms 
+READY
+INTERRUPTED after 181 ms: 08006: [*.*.64.1:63682/*.*.64.2:15433] socket is not closed; Urgent packet sent to backend successfully; An I/O error occured while sending to the backend.detail:EOF Exception;
+opengauss bulk crash #1: rows 1573840 -> 1573840, rows with Ttt 1 -> 1
+opengauss READY after 1443 ms 
+READY
+INTERRUPTED after 249 ms: 08006: [*.*.64.1:63709/*.*.64.2:15433] socket is not closed; Urgent packet sent to backend successfully; An I/O error occured while sending to the backend.detail:EOF Exception;
+opengauss bulk crash #2: rows 1573840 -> 1573840, rows with Ttt 1 -> 1
+[23:33:30] og: heavy analytical queries
+opengauss heavy sort_all_titles  ok in 5826 ms 
+opengauss heavy join_aggregate   ok in 2635 ms 
+[23:33:38] og: sustained load for 600 s
+opengauss mixed clients=16      27431 ops/s p50=0.365 p95=1.602 p99=3.280 ms errors=0 {}
+[23:43:53] reliability experiment finished

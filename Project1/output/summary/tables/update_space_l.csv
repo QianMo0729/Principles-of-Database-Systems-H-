@@ -1,0 +1,7 @@
+case,heap_before_mb,heap_after_mb,heap_after_vacuum_mb,vacuum_ms
+"broad, PostgreSQL: heap",1207.5,1308.1172,1308.1172,2920.178
+"narrow, PostgreSQL: heap",1207.5,1207.5,1207.5,0.6374
+"broad, openGauss: heap",1208.4453,1310.7188,1310.7188,912.9599
+"broad, openGauss: Ustore (in-place)",1052.375,1076.8594,1076.8594,896.0223
+"narrow, openGauss: heap",1208.4453,1208.4453,1208.4453,144.6103
+"narrow, openGauss: Ustore (in-place)",1052.375,1052.375,1052.375,663.63

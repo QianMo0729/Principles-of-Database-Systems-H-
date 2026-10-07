@@ -1,0 +1,12 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'Zqxjv Nonexistent Title'
+
+Gather  (cost=1000.00..25518.78 rows=15 width=25) (actual time=12.164..13.704 rows=0.00 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=17824
+  ->  Parallel Seq Scan on titles  (cost=0.00..24517.28 rows=6 width=25) (actual time=11.309..11.310 rows=0.00 loops=3)
+        Filter: (primary_title = 'Zqxjv Nonexistent Title'::text)
+        Rows Removed by Filter: 428370
+        Buffers: shared hit=17824
+Planning Time: 0.029 ms
+Execution Time: 13.710 ms

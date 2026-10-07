@@ -1,0 +1,7 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'The Godfather'
+
+Seq Scan on titles  (cost=0.00..338679.53 rows=142 width=25) (actual time=4.152..629.421 rows=47 loops=1)
+  Filter: (primary_title = 'The Godfather'::text)
+  Rows Removed by Filter: 12842706
+  (Buffers: shared hit=61598 read=116498)
+Total runtime: 629.481 ms

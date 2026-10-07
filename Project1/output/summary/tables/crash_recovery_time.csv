@@ -1,0 +1,5 @@
+system,killed during,runs,median,min,max
+PostgreSQL,write_load,5,361.905,353.018,426.029
+PostgreSQL,bulk_update,3,339.794,281.721,418.798
+openGauss,write_load,5,1632.04,1586.45,1665.35
+openGauss,bulk_update,3,1533.78,1443.35,1537.67

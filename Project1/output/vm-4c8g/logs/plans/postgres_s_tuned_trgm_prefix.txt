@@ -1,0 +1,15 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE 'Star Wars%'
+
+Bitmap Heap Scan on titles  (cost=120.71..162.29 rows=11 width=25) (actual time=0.176..0.192 rows=33.00 loops=1)
+  Recheck Cond: (primary_title ~~ 'Star Wars%'::text)
+  Rows Removed by Index Recheck: 54
+  Heap Blocks: exact=81
+  Buffers: shared hit=125
+  ->  Bitmap Index Scan on idx_titles_trgm  (cost=0.00..120.71 rows=11 width=0) (actual time=0.172..0.172 rows=87.00 loops=1)
+        Index Cond: (primary_title ~~ 'Star Wars%'::text)
+        Index Searches: 1
+        Buffers: shared hit=44
+Planning:
+  Buffers: shared hit=1
+Planning Time: 0.009 ms
+Execution Time: 0.195 ms

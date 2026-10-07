@@ -1,0 +1,3 @@
+system,kills,acknowledged_commits,acknowledged_but_missing,partial_transactions,unbalanced_transactions,committed_without_ack
+PostgreSQL,5,611802.0,0.0,0.0,0.0,10.0
+openGauss,5,233803.0,0.0,0.0,0.0,7.0

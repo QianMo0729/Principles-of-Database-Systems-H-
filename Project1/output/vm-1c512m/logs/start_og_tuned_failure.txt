@@ -1,0 +1,3 @@
+
+openGauss Database directory appears to contain a database; Skipping initialization
+

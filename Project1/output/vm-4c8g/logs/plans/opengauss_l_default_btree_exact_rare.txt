@@ -1,0 +1,10 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'The Godfather'
+
+Bitmap Heap Scan on titles  (cost=5.33..555.31 rows=140 width=25) (actual time=0.009..0.021 rows=47 loops=1)
+  Recheck Cond: (primary_title = 'The Godfather'::text)
+  Heap Blocks: exact=47
+  (Buffers: shared hit=51)
+  ->  Bitmap Index Scan on idx_titles_btree  (cost=0.00..5.30 rows=140 width=0) (actual time=0.006..0.006 rows=47 loops=1)
+        Index Cond: (primary_title = 'The Godfather'::text)
+        (Buffers: shared hit=4)
+Total runtime: 0.037 ms

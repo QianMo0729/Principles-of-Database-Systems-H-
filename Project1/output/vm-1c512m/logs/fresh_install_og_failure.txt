@@ -1,0 +1,8 @@
+
+                        Message: The supplied GS_PASSWORD is meet requirements.
+
+Segmentation fault
+The program "gaussdb" is needed by gs_initdb but was not found in the
+same directory as "/usr/local/opengauss/bin/gs_initdb".
+Check your installation.
+no data was returned by command ""/usr/local/opengauss/bin/gaussdb" -V"

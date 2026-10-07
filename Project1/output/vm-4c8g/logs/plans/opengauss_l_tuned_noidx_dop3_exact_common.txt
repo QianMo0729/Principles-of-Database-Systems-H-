@@ -1,0 +1,8 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'Episode #1.1'
+
+Streaming(type: LOCAL GATHER dop: 1/3)  (cost=0.00..115194.54 rows=57805 width=25) (actual time=[22.775,242.079]..[22.775,242.079], rows=60684)
+  ->  Seq Scan on titles  (cost=0.00..114888.77 rows=57805 width=25) (actual time=[5.429,234.068]..[10.283,235.167], rows=60684)
+        Filter: (primary_title = 'Episode #1.1'::text)
+        Rows Removed by Filter: 12782069
+        Buffers: shared max hit=15269 min hit=15211 max read=44185 min read=44037
+Total runtime: 244.533 ms

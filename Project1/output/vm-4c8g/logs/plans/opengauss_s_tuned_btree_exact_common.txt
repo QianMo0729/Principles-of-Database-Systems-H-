@@ -1,0 +1,10 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'Episode #1.1'
+
+Bitmap Heap Scan on titles  (cost=16.51..1189.57 rows=550 width=25) (actual time=0.048..0.199 rows=578 loops=1)
+  Recheck Cond: (primary_title = 'Episode #1.1'::text)
+  Heap Blocks: exact=484
+  (Buffers: shared hit=490)
+  ->  Bitmap Index Scan on idx_titles_btree  (cost=0.00..16.38 rows=550 width=0) (actual time=0.029..0.029 rows=578 loops=1)
+        Index Cond: (primary_title = 'Episode #1.1'::text)
+        (Buffers: shared hit=6)
+Total runtime: 0.229 ms

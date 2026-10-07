@@ -1,0 +1,8 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Love%'
+
+Seq Scan on titles  (cost=0.00..3422.31 rows=1146 width=25) (actual time=0.003..5.205 rows=682.00 loops=1)
+  Filter: (primary_title ~~ '%Love%'::text)
+  Rows Removed by Filter: 127183
+  Buffers: shared hit=1824
+Planning Time: 0.013 ms
+Execution Time: 5.221 ms

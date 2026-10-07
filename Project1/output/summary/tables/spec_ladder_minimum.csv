@@ -1,0 +1,5 @@
+system,settings,smallest spec that meets the target
+PostgreSQL,default,1c512m
+PostgreSQL,tuned,1c512m
+openGauss,tuned,2c2g
+openGauss,default,2c4g

@@ -1,0 +1,16 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE 'Star Wars%'
+
+Gather  (cost=1000.00..245853.62 rows=1147 width=25) (actual time=4.131..149.418 rows=3266.00 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=84988 read=92836
+  ->  Parallel Seq Scan on titles  (cost=0.00..244738.92 rows=478 width=25) (actual time=2.946..139.738 rows=1088.67 loops=3)
+        Filter: (primary_title ~~ 'Star Wars%'::text)
+        Rows Removed by Filter: 4279829
+        Buffers: shared hit=84988 read=92836
+Planning Time: 0.032 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.271 ms (Deform 0.111 ms), Inlining 0.000 ms, Optimization 0.266 ms, Emission 3.612 ms, Total 4.149 ms
+Execution Time: 149.593 ms

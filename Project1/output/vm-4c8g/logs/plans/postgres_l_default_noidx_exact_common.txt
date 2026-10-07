@@ -1,0 +1,16 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'Episode #1.1'
+
+Gather  (cost=1000.00..251670.35 rows=59510 width=25) (actual time=5.162..134.408 rows=60684.00 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=2235 read=175589
+  ->  Parallel Seq Scan on titles  (cost=0.00..244719.35 rows=24796 width=25) (actual time=4.210..127.489 rows=20228.00 loops=3)
+        Filter: (primary_title = 'Episode #1.1'::text)
+        Rows Removed by Filter: 4260690
+        Buffers: shared hit=2235 read=175589
+Planning Time: 0.034 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.303 ms (Deform 0.128 ms), Inlining 0.000 ms, Optimization 0.265 ms, Emission 3.973 ms, Total 4.541 ms
+Execution Time: 136.151 ms

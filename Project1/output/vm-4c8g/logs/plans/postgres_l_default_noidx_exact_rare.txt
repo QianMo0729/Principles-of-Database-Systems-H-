@@ -1,0 +1,16 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'The Godfather'
+
+Gather  (cost=1000.00..245733.05 rows=137 width=25) (actual time=3.242..142.355 rows=47.00 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  Buffers: shared hit=4491 read=173333
+  ->  Parallel Seq Scan on titles  (cost=0.00..244719.35 rows=57 width=25) (actual time=3.765..135.965 rows=15.67 loops=3)
+        Filter: (primary_title = 'The Godfather'::text)
+        Rows Removed by Filter: 4280902
+        Buffers: shared hit=4491 read=173333
+Planning Time: 0.035 ms
+JIT:
+  Functions: 12
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.279 ms (Deform 0.120 ms), Inlining 0.000 ms, Optimization 0.259 ms, Emission 3.779 ms, Total 4.317 ms
+Execution Time: 142.466 ms

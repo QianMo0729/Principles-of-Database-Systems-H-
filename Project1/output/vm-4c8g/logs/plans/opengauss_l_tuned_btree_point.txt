@@ -1,0 +1,7 @@
+SELECT id, primary_title FROM titles WHERE id = 1333173
+
+[Bypass]
+Index Scan using titles_pkey on titles  (cost=0.00..8.27 rows=1 width=25) (actual time=0.002..0.002 rows=1 loops=1)
+  Index Cond: (id = 1333173)
+  (Buffers: shared hit=4)
+Total runtime: 0.013 ms

@@ -1,0 +1,13 @@
+item,PostgreSQL,openGauss
+titles load_ms,5318.7788,25297.9778
+titles build_ms,2369.2863,3850.0493
+people load_ms,4300.5234,21860.0745
+people build_ms,2282.9315,6003.3492
+ratings load_ms,265.1623,596.9123
+ratings build_ms,168.8868,355.4502
+titles heap_mb,1389.25,1391.375
+titles total_mb,1664.7891,1667.6406
+people heap_mb,1207.1875,1208.4453
+people total_mb,1544.1484,1546.3125
+ratings heap_mb,72.75,72.5547
+ratings total_mb,109.625,109.5234

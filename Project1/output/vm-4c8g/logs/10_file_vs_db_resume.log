@@ -1,0 +1,89 @@
+[22:38:21] switching VM to spec 4c8g (4 CPU, 8 GiB)
+memindex build: load=55 ms sort=39 ms heap=7 MB rows=127865
+file memindex point            median=   0.00002 ms rows=5
+file memindex exact_common     median=   0.01040 ms rows=578
+file memindex exact_rare       median=   0.00005 ms rows=0
+file memindex exact_miss       median=   0.00005 ms rows=0
+file memindex prefix           median=   0.00062 ms rows=33
+file memindex contains_common  median=   1.40230 ms rows=682
+file memindex contains_rare    median=   1.18798 ms rows=4
+file memindex contains_miss    median=   1.30053 ms rows=0
+memindex build: load=243 ms sort=325 ms heap=56 MB rows=1285110
+file memindex point            median=   0.00002 ms rows=5
+file memindex exact_common     median=   0.12831 ms rows=6000
+file memindex exact_rare       median=   0.00021 ms rows=9
+file memindex exact_miss       median=   0.00004 ms rows=0
+file memindex prefix           median=   0.00579 ms rows=303
+file memindex contains_common  median=  14.11458 ms rows=7044
+file memindex contains_rare    median=  11.98854 ms rows=55
+file memindex contains_miss    median=  12.94283 ms rows=0
+memindex build: load=1925 ms sort=5536 ms heap=510 MB rows=12842753
+file memindex point            median=   0.00002 ms rows=5
+file memindex exact_common     median=   3.86097 ms rows=60684
+file memindex exact_rare       median=   0.00104 ms rows=47
+file memindex exact_miss       median=   0.00006 ms rows=0
+file memindex prefix           median=   0.09712 ms rows=3266
+file memindex contains_common  median= 138.74921 ms rows=70524
+file memindex contains_rare    median= 116.27758 ms rows=474
+file memindex contains_miss    median= 125.61508 ms rows=0
+postgres READY after 1159 ms 
+[22:39:01] pg full scans with: SET max_parallel_workers_per_gather = 0
+postgres noidx_serial point            median=    0.130 ms server=    0.005 ms rows=5 [Index Scan]
+postgres noidx_serial exact_common     median=  400.727 ms server=  404.862 ms rows=60684 [Seq Scan]
+postgres noidx_serial exact_rare       median=  399.016 ms server=  400.630 ms rows=47 [Seq Scan]
+postgres noidx_serial exact_miss       median=  387.017 ms server=  391.535 ms rows=0 [Seq Scan]
+postgres noidx_serial prefix           median=  425.030 ms server=  422.764 ms rows=3266 [Seq Scan]
+postgres noidx_serial contains_common  median=  614.973 ms server=  606.882 ms rows=70524 [Seq Scan]
+postgres noidx_serial contains_rare    median=  602.493 ms server=  601.793 ms rows=474 [Seq Scan]
+postgres noidx_serial contains_miss    median=  593.600 ms server=  595.942 ms rows=0 [Seq Scan]
+opengauss READY after 1189 ms 
+[22:39:34] og full scans with: SET query_dop = 3
+opengauss noidx_dop3   point            median=    0.177 ms server=    0.020 ms rows=5 [Index Scan]
+opengauss noidx_dop3   exact_common     median=  260.487 ms server=  244.533 ms rows=60684 [Seq Scan]
+opengauss noidx_dop3   exact_rare       median=  224.806 ms server=  215.125 ms rows=47 [Seq Scan]
+opengauss noidx_dop3   exact_miss       median=  195.734 ms server=  181.343 ms rows=0 [Seq Scan]
+opengauss noidx_dop3   prefix           median=  189.929 ms server=  192.388 ms rows=3266 [Seq Scan]
+opengauss noidx_dop3   contains_common  median=  263.473 ms server=  255.618 ms rows=70524 [Seq Scan]
+opengauss noidx_dop3   contains_rare    median=  246.555 ms server=  244.554 ms rows=474 [Seq Scan]
+opengauss noidx_dop3   contains_miss    median=  243.582 ms server=  241.544 ms rows=0 [Seq Scan]
+[22:39:49] starting pg (default config); host load 3.00
+postgres READY after 136 ms 
+postgres noidx        point            median=    0.129 ms server=    0.011 ms rows=5 [Index Scan]
+postgres noidx        exact_common     median=  152.988 ms server=  136.151 ms rows=60684 [Parallel Seq Scan]
+postgres noidx        exact_rare       median=  137.090 ms server=  142.466 ms rows=47 [Parallel Seq Scan]
+postgres noidx        exact_miss       median=  135.990 ms server=  136.637 ms rows=0 [Parallel Seq Scan]
+postgres noidx        prefix           median=  143.538 ms server=  148.874 ms rows=3266 [Parallel Seq Scan]
+postgres noidx        contains_common  median=  218.397 ms server=  212.751 ms rows=70524 [Parallel Seq Scan]
+postgres noidx        contains_rare    median=  209.875 ms server=  209.898 ms rows=474 [Parallel Seq Scan]
+postgres noidx        contains_miss    median=  210.138 ms server=  209.521 ms rows=0 [Parallel Seq Scan]
+postgres index btree built in 2888 ms
+postgres btree        point            median=    0.147 ms server=    0.005 ms rows=5 [Index Scan]
+postgres btree        exact_common     median=   61.154 ms server=   57.807 ms rows=60684 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree        exact_rare       median=    0.117 ms server=    0.017 ms rows=47 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree        exact_miss       median=    0.115 ms server=    0.005 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+postgres btree        prefix           median=    1.170 ms server=    0.664 ms rows=3266 [Index Scan]
+postgres btree        contains_common  median=  234.331 ms server=  219.618 ms rows=70524 [Parallel Seq Scan]
+postgres btree        contains_rare    median=  218.496 ms server=  214.670 ms rows=474 [Parallel Seq Scan]
+postgres btree        contains_miss    median=  212.597 ms server=  211.209 ms rows=0 [Parallel Seq Scan]
+postgres update broad  heap   median=   3597.6 ms changed=1305670
+[22:40:57] starting og (default config); host load 3.16
+opengauss READY after 1245 ms 
+opengauss noidx        point            median=    0.181 ms server=    0.016 ms rows=5 [Index Scan]
+opengauss noidx        exact_common     median=  694.915 ms server=  670.787 ms rows=60684 [Seq Scan]
+opengauss noidx        exact_rare       median=  658.638 ms server=  668.110 ms rows=47 [Seq Scan]
+opengauss noidx        exact_miss       median=  633.389 ms server=  659.816 ms rows=0 [Seq Scan]
+opengauss noidx        prefix           median=  680.855 ms server=  684.686 ms rows=3266 [Seq Scan]
+opengauss noidx        contains_common  median=  908.655 ms server=  926.464 ms rows=70524 [Seq Scan]
+opengauss noidx        contains_rare    median=  887.418 ms server=  890.004 ms rows=474 [Seq Scan]
+opengauss noidx        contains_miss    median=  882.162 ms server=  877.647 ms rows=0 [Seq Scan]
+opengauss index btree built in 8569 ms
+opengauss btree        point            median=    0.172 ms server=    0.018 ms rows=5 [Index Scan]
+opengauss btree        exact_common     median=   42.007 ms server=   35.346 ms rows=60684 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree        exact_rare       median=    0.225 ms server=    0.037 ms rows=47 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree        exact_miss       median=    0.193 ms server=    0.008 ms rows=0 [Bitmap Heap Scan + Bitmap Index Scan]
+opengauss btree        prefix           median=    2.351 ms server=    1.223 ms rows=3266 [Index Scan]
+opengauss btree        contains_common  median=  875.162 ms server=  854.666 ms rows=70524 [Seq Scan]
+opengauss btree        contains_rare    median=  835.442 ms server=  861.346 ms rows=474 [Seq Scan]
+opengauss btree        contains_miss    median=  835.430 ms server=  841.491 ms rows=0 [Seq Scan]
+opengauss update broad  heap   median=  14124.2 ms changed=1305670
+[22:46:08] experiment A finished; host load 2.18

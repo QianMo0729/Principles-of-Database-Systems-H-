@@ -1,0 +1,12 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE 'Star Wars%'
+
+Seq Scan on titles  (cost=0.00..338346.91 rows=1141 width=25) (actual time=3.703..422.541 rows=3266.00 loops=1)
+  Filter: (primary_title ~~ 'Star Wars%'::text)
+  Rows Removed by Filter: 12839487
+  Buffers: shared hit=9189 read=168635
+Planning Time: 0.030 ms
+JIT:
+  Functions: 4
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.080 ms (Deform 0.035 ms), Inlining 0.000 ms, Optimization 0.083 ms, Emission 0.987 ms, Total 1.151 ms
+Execution Time: 422.764 ms

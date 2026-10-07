@@ -1,0 +1,13 @@
+SELECT id, primary_title FROM titles WHERE primary_title = 'Zqxjv Nonexistent Title'
+
+Bitmap Heap Scan on titles  (cost=348.06..406.95 rows=15 width=25) (actual time=0.159..0.159 rows=0.00 loops=1)
+  Recheck Cond: (primary_title = 'Zqxjv Nonexistent Title'::text)
+  Buffers: shared hit=104
+  ->  Bitmap Index Scan on idx_titles_trgm  (cost=0.00..348.06 rows=15 width=0) (actual time=0.158..0.159 rows=0.00 loops=1)
+        Index Cond: (primary_title = 'Zqxjv Nonexistent Title'::text)
+        Index Searches: 1
+        Buffers: shared hit=104
+Planning:
+  Buffers: shared hit=1
+Planning Time: 0.011 ms
+Execution Time: 0.163 ms

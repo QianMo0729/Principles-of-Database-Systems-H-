@@ -1,0 +1,7 @@
+scale and rule,File: rewrite + fsync,"File: rewrite, no fsync",PostgreSQL: heap,openGauss: heap,openGauss: Ustore (in-place)
+s broad,30.0459,26.1146,27.5974,48.1486,94.6029
+s narrow,27.8744,27.2925,0.4846,2.3173,1.9083
+m broad,243.1447,225.3209,271.8091,355.2928,774.8025
+m narrow,239.9309,221.3758,0.4978,1.3486,1.4693
+l broad,2538.5394,2219.5533,3194.0643,4035.9291,7802.283
+l narrow,2387.659,2195.9751,0.7074,3.5242,3.3108

@@ -1,0 +1,16 @@
+spec: 1c512m, openGauss started on the full data set with settings sized for the machine
+container state: running=false exit_code=139 oom_killed=false
+VM memory (MiB): total 454.6, available 294.4; kernel OOM kills: 0
+--- last lines of the server log
+
+openGauss Database directory appears to contain a database; Skipping initialization
+
+--- last kernel messages
+[    6.689066] br-2856b7374efd: port 1(vethb02c59b) entered forwarding state
+[    6.733555] __vm_enough_memory: pid: 1513, comm: gaussdb, not enough memory for the allocation
+[    6.753936] br-2856b7374efd: port 1(vethb02c59b) entered disabled state
+[    6.753959] veth5cfac65: renamed from eth0
+[    6.762556] br-2856b7374efd: port 1(vethb02c59b) entered disabled state
+[    6.762609] vethb02c59b (unregistering): left allmulticast mode
+[    6.762610] vethb02c59b (unregistering): left promiscuous mode
+[    6.762611] br-2856b7374efd: port 1(vethb02c59b) entered disabled state

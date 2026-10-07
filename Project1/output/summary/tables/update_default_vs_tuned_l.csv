@@ -1,0 +1,3 @@
+method,tuned,default
+PostgreSQL: heap,3194.0643,3597.59
+openGauss: heap,4035.9291,14124.2

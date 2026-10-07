@@ -1,0 +1,14 @@
+SELECT id, primary_title FROM titles WHERE to_tsvector('simple', primary_title) @@ plainto_tsquery('simple', 'godfather')
+
+Bitmap Heap Scan on titles  (cost=32.60..8411.75 rows=2141 width=25) (actual time=0.026..0.125 rows=429.00 loops=1)
+  Recheck Cond: (to_tsvector('simple'::regconfig, primary_title) @@ '''godfather'''::tsquery)
+  Heap Blocks: exact=409
+  Buffers: shared hit=413
+  ->  Bitmap Index Scan on idx_titles_fts  (cost=0.00..32.06 rows=2141 width=0) (actual time=0.016..0.016 rows=429.00 loops=1)
+        Index Cond: (to_tsvector('simple'::regconfig, primary_title) @@ '''godfather'''::tsquery)
+        Index Searches: 1
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=1
+Planning Time: 0.019 ms
+Execution Time: 0.136 ms

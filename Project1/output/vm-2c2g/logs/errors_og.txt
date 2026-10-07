@@ -1,0 +1,10 @@
+opengauss duplicate_key      23505: [*.*.64.1:63303/*.*.64.2:15433] ERROR: duplicate key value violates unique constraint "err_parent_pkey"
+opengauss not_null           23502: [*.*.64.1:63303/*.*.64.2:15433] ERROR: null value in column "name" violates not-null constraint
+opengauss foreign_key        23503: [*.*.64.1:63303/*.*.64.2:15433] ERROR: insert or update on table "err_child" violates foreign key constraint "err_child_parent_fkey"
+opengauss check_constraint   23514: [*.*.64.1:63303/*.*.64.2:15433] ERROR: new row for relation "err_child" violates check constraint "err_child_qty_check"
+opengauss value_too_long     22001: [*.*.64.1:63303/*.*.64.2:15433] ERROR: value too long for type character varying(8)
+opengauss bad_cast           22P02: [*.*.64.1:63303/*.*.64.2:15433] ERROR: invalid input syntax for integer: "abc"
+opengauss division_by_zero   22012: [*.*.64.1:63303/*.*.64.2:15433] ERROR: division by zero
+opengauss syntax_error       42601: [*.*.64.1:63303/*.*.64.2:15433] ERROR: syntax error at or near "SELEC"
+opengauss unknown_table      42P01: [*.*.64.1:63303/*.*.64.2:15433] ERROR: relation "no_such_table" does not exist on gaussdb
+opengauss unknown_column     42703: [*.*.64.1:63303/*.*.64.2:15433] ERROR: column "no_such_column" does not exist

@@ -1,0 +1,9 @@
+operation,PostgreSQL: no index,openGauss: no index,"PostgreSQL: no index, parallel query off","openGauss: no index, parallel query on"
+point,0.122,0.176,0.129808,0.177433
+exact_common,147.3601,666.3083,400.727,260.487
+exact_rare,142.1509,635.4157,399.016,224.806
+exact_miss,139.7529,597.0695,387.017,195.734
+prefix,146.9453,630.6413,425.03,189.929
+contains_common,220.0776,844.1924,614.973,263.473
+contains_rare,214.4398,824.7546,602.493,246.555
+contains_miss,213.4068,815.8289,593.6,243.582

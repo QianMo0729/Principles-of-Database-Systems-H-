@@ -1,0 +1,12 @@
+SELECT id, primary_title FROM titles WHERE primary_title LIKE '%Zqxjv%'
+
+Seq Scan on titles  (cost=0.00..338346.91 rows=1141 width=25) (actual time=595.827..595.828 rows=0.00 loops=1)
+  Filter: (primary_title ~~ '%Zqxjv%'::text)
+  Rows Removed by Filter: 12842753
+  Buffers: shared hit=16101 read=161723
+Planning Time: 0.033 ms
+JIT:
+  Functions: 4
+  Options: Inlining false, Optimization false, Expressions true, Deforming true
+  Timing: Generation 0.077 ms (Deform 0.033 ms), Inlining 0.000 ms, Optimization 0.083 ms, Emission 0.983 ms, Total 1.144 ms
+Execution Time: 595.942 ms
